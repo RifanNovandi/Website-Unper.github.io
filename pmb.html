@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulir PMB - Penerimaan Mahasiswa Baru</title>
+<!-- Link Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    body {
+    background: linear-gradient(135deg, #0066cc, #00ccff);
+    font-family: 'Segoe UI', sans-serif;
+    }
+    .container {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    padding: 30px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    }
+    h2 {
+    text-align: center;
+    color: #004080;
+    font-weight: bold;
+    margin-bottom: 20px;
+    }
+    .form-section {
+    margin-bottom: 30px;
+    }
+    label {
+    font-weight: 500;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+<h2>Formulir Penerimaan Mahasiswa Baru (PMB)</h2>
+<form action="proses_pmb.php" method="POST" enctype="multipart/form-data">
+    
+    <!-- I. DATA PRIBADI -->
+    <div class="form-section">
+    <h4>I. Data Pribadi</h4>
+    <div class="mb-3">
+        <label for="nama_lengkap_rifan" class="form-label">Nama Lengkap</label>
+        <input type="text" class="form-control" id="nama_lengkap_rifan" name="nama_lengkap_rifan" pattern="[A-Za-z\s]+" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="nik_rifan" class="form-label">Nomor Induk Kependudukan (NIK)</label>
+        <input type="text" class="form-control" id="nik_rifan" name="nik_rifan" pattern="\d{16}" maxlength="16" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="tempat_lahir_rifan" class="form-label">Tempat Lahir</label>
+        <input type="text" class="form-control" id="tempat_lahir_rifan" name="tempat_lahir_rifan" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="tanggal_lahir_rifan" class="form-label">Tanggal Lahir</label>
+        <input type="date" class="form-control" id="tanggal_lahir_rifan" name="tanggal_lahir_rifan" required>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Jenis Kelamin</label><br>
+        <input type="radio" id="laki_rifan" name="jenis_kelamin_rifan" value="Laki-laki" required> Laki-laki
+        <input type="radio" id="perempuan_rifan" name="jenis_kelamin_rifan" value="Perempuan" required> Perempuan
+    </div>
+
+    <div class="mb-3">
+        <label for="agama_rifan" class="form-label">Agama</label>
+        <select class="form-select" id="agama_rifan" name="agama_rifan" required>
+        <option value="">-- Pilih Agama --</option>
+        <option>Islam</option>
+        <option>Kristen</option>
+        <option>Katolik</option>
+        <option>Hindu</option>
+        <option>Buddha</option>
+        <option>Konghucu</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label for="alamat_rifan" class="form-label">Alamat Lengkap</label>
+        <textarea class="form-control" id="alamat_rifan" name="alamat_rifan" rows="3" required></textarea>
+    </div>
+
+    <div class="mb-3">
+        <label for="nohp_rifan" class="form-label">Nomor HP</label>
+        <input type="tel" class="form-control" id="nohp_rifan" name="nohp_rifan" pattern="^\+?\d{10,15}$" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="email_rifan" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email_rifan" name="email_rifan" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="status_rifan" class="form-label">Status Pernikahan</label>
+        <select class="form-select" id="status_rifan" name="status_rifan">
+        <option>Belum Menikah</option>
+        <option>Menikah</option>
+        <option>Cerai</option>
+        </select>
+    </div>
+    </div>
+
+    <!-- II. DATA SEKOLAH ASAL -->
+    <div class="form-section">
+    <h4>II. Data Sekolah Asal</h4>
+    <div class="mb-3">
+        <label for="nama_sekolah_rifan" class="form-label">Nama Sekolah Asal</label>
+        <input type="text" class="form-control" id="nama_sekolah_rifan" name="nama_sekolah_rifan" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="jurusan_sekolah_rifan" class="form-label">Jurusan di Sekolah</label>
+        <select class="form-select" id="jurusan_sekolah_rifan" name="jurusan_sekolah_rifan" required>
+        <option>IPA</option>
+        <option>IPS</option>
+        <option>Bahasa</option>
+        <option>SMK Teknik</option>
+        <option>SMK Akuntansi</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label for="tahun_lulus_rifan" class="form-label">Tahun Lulus</label>
+        <input type="number" class="form-control" id="tahun_lulus_rifan" name="tahun_lulus_rifan" min="2000" max="2025" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="nisn_rifan" class="form-label">Nomor Induk Siswa Nasional (NISN)</label>
+        <input type="text" class="form-control" id="nisn_rifan" name="nisn_rifan" pattern="\d{10}" maxlength="10" required>
+    </div>
+    </div>
+
+    <!-- III. PILIHAN PROGRAM STUDI -->
+    <div class="form-section">
+    <h4>III. Pilihan Program Studi</h4>
+    <div class="mb-3">
+        <label for="prodi1_rifan" class="form-label">Pilihan 1 Program Studi</label>
+        <select class="form-select" id="prodi1_rifan" name="prodi1_rifan" required>
+        <option value="">-- Pilih Program Studi --</option>
+        <option>Teknik Informatika</option>
+        <option>Sistem Informasi</option>
+        <option>Manajemen</option>
+        <option>Akuntansi</option>
+        <option>Hukum</option>
+        <option>Pendidikan Bahasa Inggris</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label for="prodi2_rifan" class="form-label">Pilihan 2 Program Studi</label>
+        <select class="form-select" id="prodi2_rifan" name="prodi2_rifan">
+        <option value="">-- Opsional --</option>
+        <option>Teknik Informatika</option>
+        <option>Sistem Informasi</option>
+        <option>Manajemen</option>
+        <option>Akuntansi</option>
+        <option>Hukum</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Jalur Pendaftaran</label><br>
+        <input type="radio" name="jalur_rifan" value="Reguler" required> Reguler
+        <input type="radio" name="jalur_rifan" value="Prestasi" required> Prestasi
+        <input type="radio" name="jalur_rifan" value="Afirmasi" required> Afirmasi
+    </div>
+    </div>
+
+    <!-- IV. DOKUMEN PENDUKUNG -->
+    <div class="form-section">
+    <h4>IV. Dokumen Pendukung</h4>
+    <div class="mb-3">
+        <label for="ijazah_rifan" class="form-label">Scan Ijazah / Surat Keterangan Lulus (.pdf/.jpg)</label>
+        <input type="file" class="form-control" id="ijazah_rifan" name="ijazah_rifan" accept=".pdf,.jpg" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="ktp_rifan" class="form-label">Scan KTP / KK (.pdf/.jpg)</label>
+        <input type="file" class="form-control" id="ktp_rifan" name="ktp_rifan" accept=".pdf,.jpg" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="foto_rifan" class="form-label">Pas Foto Resmi (.jpg/.png)</label>
+        <input type="file" class="form-control" id="foto_rifan" name="foto_rifan" accept=".jpg,.png" required>
+    </div>
+    </div>
+
+    <!-- V. PERNYATAAN -->
+    <div class="form-section">
+    <h4>V. Pernyataan & Persetujuan</h4>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="persetujuan_rifan" name="persetujuan_rifan" required>
+        <label class="form-check-label" for="persetujuan_rifan">
+        Saya menyatakan bahwa semua data yang saya isikan adalah benar dan dapat dipertanggungjawabkan.
+        </label>
+    </div>
+    </div>
+
+    <!-- Tombol Submit -->
+    <div class="text-center">
+    <button type="submit" class="btn btn-primary px-5 py-2">Kirim Data</button>
+    </div>
+</form>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
